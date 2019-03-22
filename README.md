@@ -1,5 +1,5 @@
-# Mathmetics
-Record my learning notes about Mathmetics
+# Mathematics
+Record my learning notes about Mathematics
 ## Optimization
 
 ## Matrix theory
