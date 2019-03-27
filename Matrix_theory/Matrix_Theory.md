@@ -19,13 +19,34 @@
 
 ## Vector Space
 
+1. A ***vector space*** is a set V along with an addition on V and a scalar
+   multiplication on V such that the following **properties** hold:
 
+   - **commutativity**
 
+     ​	$u+v=v+u$ for all $u,v \in V$ ;
 
+   - **associativity**
 
+     ​	$(u+v)+w=u+(v+w)$ and $(ab)v=a(bv)$ for all $u,v,w \in V $ and all $a,b\in F​$ ;
 
+   - **additive identity**
 
+     ​	there exists an element $0\in V$ such that $v+0=v$ for all $v\in V$
 
+   - **additive inverse**
+
+     ​	for every $v\in V$, there exists $w\in V$ such that $v+w=0$ ;
+
+   - **multiplication identity**
+
+     ​	$1v=v$ for all $v\in V​$ ;
+
+   - **distributive properties**
+
+     ​	$a(u+v)=au+av$ and $(a+b)u=au+bu$ for all $a,b\in F$ and all $u,v\in V$
+
+2. **polynomial** is also a vector space
 
 
 
