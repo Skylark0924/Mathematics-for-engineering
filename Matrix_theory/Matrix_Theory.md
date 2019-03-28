@@ -73,14 +73,19 @@ $$dim(U+W)=dimU+dimW-dim(U \cap W)$$
 ### 线性变换
 线性变换应满足可加性和齐次性，U到V的线性变换全体记为$Hom(U, V)$ 
 1. **核：** “零点”集$ \{\alpha \in U: \sigma(\alpha)=0\} $，记作$Ker(\sigma)$或$\sigma^{-1}(0)$
+
 2. **像：** “函数值”的集合$\{\alpha \in V: \exists \beta \in U, 使得\alpha=\sigma(\beta)\}$，记作$Im(\sigma)$或$\sigma(U)$
+
 3. $Ker\sigma和Im\sigma$分别是U和V的子空间，其维数记作$\eta (\sigma)与\gamma(\sigma)$
     **理解：** 线性变换$\sigma=Ax$对应矩阵A，零变换对应零矩阵，恒等变换对应恒等矩阵；变换的核与矩阵零空间$N(A)$有关，像与矩阵的列空间$R(A)$。当选取标准基时，线性变换几乎就是左乘一个矩阵A，进一步，设$A=(a_{ij})$，则
-$$\sigma(\alpha)=A(x_1, x_2, \dots, x_n)^T$$$$=(a_{11}x_1+a_{12}x_2+\dots+a_{1n}x_n,\dots,a_{n1}x_1+a_{n2}x_2+\dots+a_{nn}x_n)^T $$$$=(\sigma_1(\alpha),\dots,\sigma_n(\alpha))$$
-即线性变换不过是多个多元线性函数
-1. **不同基下的矩阵的关系：** 设$\alpha和\beta$是U的两组基，P是由$\alpha-基到\beta-基$的过渡矩阵；设$\alpha’和\beta’$是V的两组基，Q是由$\alpha’-基到\beta’-基$的过渡矩阵；设$\sigma\in Hom(U,V)$关于$\alpha-基和\alpha’-基$的矩阵为A，关于$\beta-基 和\beta’-基$的矩阵为B：
-$$B=Q^{-1}AP$$
-假定U=V且$\alpha-基等于\alpha’-基$，$\beta-基等于\beta’基$，于是：
-$$B=P^{-1}AP​$$
-则A与B**相似**
-1. **同构：** $\sigma: U-> V$ 既是单射又是满射；两个空间不仅元素对应，运算也对应；并且**维度相同**
+    $$\sigma(\alpha)=A(x_1, x_2, \dots, x_n)^T$$$$=(a_{11}x_1+a_{12}x_2+\dots+a_{1n}x_n,\dots,a_{n1}x_1+a_{n2}x_2+\dots+a_{nn}x_n)^T $$$$=(\sigma_1(\alpha),\dots,\sigma_n(\alpha))$$ 
+
+    即线性变换不过是多个多元线性函数
+
+4. **不同基下的矩阵的关系：** 设$\alpha和\beta$是U的两组基，P是由$\alpha-基到\beta-基$的过渡矩阵；设$\alpha’和\beta’$是V的两组基，Q是由$\alpha’-基到\beta’-基$的过渡矩阵；设$\sigma\in Hom(U,V)$关于$\alpha-基和\alpha’-基$的矩阵为A，关于$\beta-基 和\beta’-基$的矩阵为B：
+  $$B=Q^{-1}AP$$
+  假定U=V且$\alpha-基等于\alpha’-基$，$\beta-基等于\beta’基$，于是：
+  $$B=P^{-1}AP​$$
+  则A与B**相似**
+
+5. **同构：** $\sigma: U-> V$ 既是单射又是满射；两个空间不仅元素对应，运算也对应；并且**维度相同**
