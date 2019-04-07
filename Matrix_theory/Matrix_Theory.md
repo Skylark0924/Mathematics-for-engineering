@@ -1,4 +1,7 @@
+<font color=#FF8C00></font>
+
 # 理解矩阵
+
 1. [理解矩阵（一）](https://blog.csdn.net/myan/article/details/647511)
 2. [理解矩阵（二）](https://blog.csdn.net/myan/article/details/649018)
 3. [理解矩阵（三）](https://blog.csdn.net/myan/article/details/1865397)
@@ -17,7 +20,7 @@
 
 # Linear Algebra Done Right
 
-## Vector Space
+## Vector Spaces
 
 1. A ***vector space*** is a set V along with an addition on V and a scalar
    multiplication on V such that the following **properties** hold:
@@ -28,31 +31,122 @@
 
    - **associativity**
 
-     ​	$(u+v)+w=u+(v+w)$ and $(ab)v=a(bv)$ for all $u,v,w \in V $ and all $a,b\in F​$ ;
+     ​	$(u+v)+w=u+(v+w)​$ and $(ab)v=a(bv)​$ for all $u,v,w \in V ​$ and all $a,b\in F​$ ;
 
-   - **additive identity**
+   - **additive identity** (must be unique)
 
      ​	there exists an element $0\in V$ such that $v+0=v$ for all $v\in V$
 
-   - **additive inverse**
+   - **additive inverse**  (must be unique)
 
      ​	for every $v\in V$, there exists $w\in V$ such that $v+w=0$ ;
 
    - **multiplication identity**
 
-     ​	$1v=v$ for all $v\in V​$ ;
+     ​	$1v=v​$ for all $v\in V​$ ;
 
    - **distributive properties**
 
      ​	$a(u+v)=au+av$ and $(a+b)u=au+bu$ for all $a,b\in F$ and all $u,v\in V$
 
-2. **polynomial** is also a vector space
+   **Polynomial**  is also a vector space
+
+2. **Propositions**:
+
+   - $0v =0​$ for every $v \in V​$.
+   - $a0=0​$ for every $a∈F.​$ 
+   - $(−1)v =−v​$ for every $v \in V​$ .
+
+   **Remember that the $0, -1$ above may not be the regular $0, -1$ as we known, they denote additive inverse and additive identity of the specific operation**(pending)
+
+3. **Subspaces**：If $U$ is a subset of $V$, then to check that $U$ is a subspace of $V$ we need only check that $U$ satisﬁes the following: 
+
+   - **additive identity** : $0∈U; ​$ 
+   - **closed under addition** : $u,v ∈U $ implies $u+v ∈U; ​$
+   - **closed under scalar multiplication** : $a∈F$ and $u∈U$ implies $au∈U$. 
+
+   <font color=#FF8C00>A subspace can be regard as a large space with some properties being limited</font>
+
+4. **Sums and Direct Sums**： Speciﬁcally, we say that $V​$ is the direct sum of subspaces$ U_1 ,...,U_m​$, 
+
+   (1)  $V =U_1 ⊕···⊕U_m​$, 
+
+   (2) each element of $V​$ can be written <font color=#FF8C00>**uniquely** </font>as a sum $u_1+\dots +u_m​$, where each $u_j \in U_j​$.
+
+   **Proposition**: Suppose that $U​$ and $W​$ are subspaces of $V​$. Then $V =U⊕W​$ if and only if $V =U+W​$ and $U∩W =\{0\}​$.  (only with the case of two subspaces). 
+
+   $$V =U⊕W  \Leftrightarrow  V =U+W  \&  U∩W =\{0\}​$$
+
+   
+
+## Finite-Dimensional Vector Spaces
+
+### Span and Linear Independence 
+
+1. **The set of all linear combinations of $(v_1,...,v_m)​$ is called the span of $(v_1,...,v_m)​$, denoted $span(v_1,...,v_m)​$.**
+
+   $$span(v_1,...,v_m)=\lbrace a_1v_1+···+a_mv_m : a_1,...,a_m ∈F\rbrace. ​$$
+
+    the span of any list of vectors in $V$ is a subspace of $V$.
+
+2. **Inﬁnite-dimensional** vector spaces are the center of attention in the branch of mathematics called *functional analysis*.
+
+3. A list $(v_1,...,v_m)​$ of vectors in $V​$ is called **linearly independent** if the only choice of $a_1 ,...,a_m ∈F​$ that makes $a_1 v_1 +···+a_mv_m​$ equal $0​$ is $a_1 =···=a_m =0.​$
+
+### Bases
+
+A basis of $V$ is a list of vectors in $V$ that is linearly independent and spans $V.$ 
+
+1. A list $(v_1,...,v_n)$ of vectors in $V$ is a basis of $V$ if and only if every $v ∈V$ can be written uniquely in the form
+
+   $$ v =a_1v_1+···+a_nv_n$$
+
+   where $a_1,...,a_n ∈F$.
+
+2. Every spanning list in a vector space can be reduced to a basis of the vector space.
+
+3.  Every linearly independent list of vectors in a ﬁnite-dimensional vector space can be extended to a basis of the vector space.
+
+4.  Suppose $V$ is ﬁnite dimensional and $U$ is a subspace of $V$. Then there is a subspace W of $V$ such that $V =U⊕W.​$
+
+### Dimension
+
+1.  If $V$ is ﬁnite dimensional and $U$ is a subspace of $V$, then $dimU ≤dimV.$ 
+
+2.  If $U1$ and  $U2$ are subspaces of a ﬁnite-dimensional vector space, then 
+
+   <font color=#FF8C00>$dim(U1+U2)=dimU1+dimU2−dim(U1∩U2)$</font>.
+
+   - It is same as the number of elements in the union of  two finite sets: $$n(A+B)=n(A)+n(B)-n(A\cap B)​$$
+
+3. Suppose V is ﬁnite dimensional and $U1,...,Um$ are subspaces of V such that
+
+    $$V =U_1+···+U_m​$$ 
+
+   and  
+
+   $$dimV =dimU_1+···+dimU_m$$.
+
+   Then $V =U_1⊕···⊕U_m$.
+
+   <font color=#FF8C00>Recall that direct sum is analogous to disjoint union. </font>
+
+   - In sets:
+
+     If $B=A_1 \cup \dots A_m$, and $n(B)=n(A_1)+\dots+n(A_m)$, then the union is a disjoint union.
+
+## Linear Maps
+
+
+
+
 
 
 
 
 
 # 第二章 矩阵与线性变换
+
 ### 维数定理
 设V是线性空间，U与W是V的两个子空间，则
 $$dim(U+W)=dimU+dimW-dim(U \cap W)$$
@@ -83,9 +177,9 @@ $$dim(U+W)=dimU+dimW-dim(U \cap W)$$
     即线性变换不过是多个多元线性函数
 
 4. **不同基下的矩阵的关系：** 设$\alpha和\beta$是U的两组基，P是由$\alpha-基到\beta-基$的过渡矩阵；设$\alpha’和\beta’$是V的两组基，Q是由$\alpha’-基到\beta’-基$的过渡矩阵；设$\sigma\in Hom(U,V)$关于$\alpha-基和\alpha’-基$的矩阵为A，关于$\beta-基 和\beta’-基$的矩阵为B：
-  $$B=Q^{-1}AP$$
-  假定U=V且$\alpha-基等于\alpha’-基$，$\beta-基等于\beta’基$，于是：
-  $$B=P^{-1}AP​$$
-  则A与B**相似**
+    $$B=Q^{-1}AP$$
+    假定U=V且$\alpha-基等于\alpha’-基$，$\beta-基等于\beta’基$，于是：
+    $$B=P^{-1}AP​$$
+    则A与B**相似**
 
 5. **同构：** $\sigma: U-> V$ 既是单射又是满射；两个空间不仅元素对应，运算也对应；并且**维度相同**
