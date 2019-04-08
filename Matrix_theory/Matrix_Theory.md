@@ -111,33 +111,125 @@ A basis of $V$ is a list of vectors in $V$ that is linearly independent and span
 
 ### Dimension
 
-1.  If $V$ is ﬁnite dimensional and $U$ is a subspace of $V$, then $dimU ≤dimV.$ 
+1. If $V$ is ﬁnite dimensional and $U$ is a subspace of $V$, then $dimU ≤dimV.$ 
 
-2.  If $U1$ and  $U2$ are subspaces of a ﬁnite-dimensional vector space, then 
+2. If $U_1$ and  $U_2$ are subspaces of a ﬁnite-dimensional vector space, then 
 
-   <font color=#FF8C00>$dim(U1+U2)=dimU1+dimU2−dim(U1∩U2)$</font>.
+   <font color=#FF0000>$dim(U_1+U_2)=dimU_1+dimU_2−dim(U_1∩U_2)$</font>.
 
-   - It is same as the number of elements in the union of  two finite sets: $$n(A+B)=n(A)+n(B)-n(A\cap B)​$$
+   - It is same as the number of elements in the union of  two finite sets: 
+     $$
+     n(A+B)=n(A)+n(B)-n(A\cap B)​
+     $$
 
-3. Suppose V is ﬁnite dimensional and $U1,...,Um$ are subspaces of V such that
+3. Suppose V is ﬁnite dimensional and $U1,...,Um​$ are subspaces of V such that
 
-    $$V =U_1+···+U_m​$$ 
+   $$V =U_1+···+U_m​$$ 
 
    and  
 
-   $$dimV =dimU_1+···+dimU_m$$.
+   $$dimV =dimU_1+···+dimU_m​$$.
 
-   Then $V =U_1⊕···⊕U_m$.
+   Then $V =U_1⊕···⊕U_m​$.
 
    <font color=#FF8C00>Recall that direct sum is analogous to disjoint union. </font>
 
    - In sets:
 
-     If $B=A_1 \cup \dots A_m$, and $n(B)=n(A_1)+\dots+n(A_m)$, then the union is a disjoint union.
+     If $B=A_1 \cup \dots A_m​$, and $n(B)=n(A_1)+\dots+n(A_m)​$, then the union is a disjoint union.
 
 ## Linear Maps
 
+### Definitions and Examples 
 
+A linear map from $V$ to $W$ is a function $T$ : $V →W$ with the following properties: 
+
+- **additivity** : $T(u+v)=Tu+Tv​$ for all $u,v ∈V​$; 
+- **homogeneity** :  $T(av)=a(Tv)$ for all $a∈F$ and all $v ∈V.$ 
+
+ For $S,T ∈L(V,W),$ 
+
+- **associativity** 
+   $$
+   (T_1 T_2 )T_3 =T_1 (T_2 T_3 )​
+   $$
+
+- **identity** 
+
+   $$
+   TI=T​ and IT =T​
+   $$
+
+- **distributive properties** 
+  $$
+  (S_1 +S_2 )T = S_1 T +S_2 T and S(T_1 +T_2 ) = ST_1 +ST_2
+  $$
+
+- Multiplication of linear maps is **not commutative**. 
+
+  $$
+  ST \neq TS​
+  $$
+
+### Null Spaces and Ranges 
+
+1. $null T ={v ∈V : Tv=0}​$ 
+
+   - If $T ∈L(V,W)​$, then $nullT​$ is a subspace of $V​$. 
+
+   - Let $T ∈L(V,W)$. Then $T$ is **injective（单射）** if and only if $nullT ={0}$. 
+
+     (A linear map $T: V → W​$ is called injective if whenever $u,v ∈ V​$ and $Tu = Tv​$, we have $u = v​$.)
+
+2. $rangeT ={Tv: v ∈V}$
+
+   -  If $T ∈L(V,W)$, then $rangeT$ is a subspace of $W$. 
+   - A linear map $T: V → W$ is called **surjective（满射）** if its range equals $W$.
+
+3. If $V$ is ﬁnite dimensional and $T ∈L(V,W)$, then $rangeT$ is a ﬁnite-dimensional subspace of $W$ and 
+
+   <font color=#FF0000>$dimV =dim nullT +dimrangeT​$</font>
+
+4.  If $V​$ and $W​$ are ﬁnite-dimensional vector spaces such that <font color=#FF8C00> $dimV>dimW​$</font>, then no linear map from $V​$ to $W​$ is **injective**. 
+   $$
+   dimnullT =dimV −dimrangeT \ge dim V-dimW >0
+   $$
+
+5.  If $V$ and $W$ are ﬁnite-dimensional vector spaces such that , <font color=#FF8C00> $dimV<dimW$</font>then no linear map from $V$ to $W$ is **surjective**.
+   $$
+   dimrangeT =dimV −dimnullT ≤dimV < dimW​
+   $$
+   
+
+**Conclusions:**
+
+1. <font color=#FF8C00>A homogeneous system of linear equations in which there are more variables than equations must have nonzero solutions.</font>
+
+2. <font color=#FF8C00>An inhomogeneous system of linear equations in which there are more equations than variables has no solution for some choice of the constant terms.</font>
+
+### The Matrix of a Linear Map
+
+$$
+\left[
+\begin{matrix}
+a_{1,1} & \dots & a_{1,n} \\
+\vdots &  & \vdots \\
+a_{m,1} & \dots & a_{m,n}
+\end{matrix}
+\right]
+$$
+
+Let $T ∈L(V,W)​$. Suppose that $(v_1,...,v_n)​$ is a basis of $V​$ and $(w_1,...,w_m)​$ is a basis of $W​$. 
+$$
+Tv_k =a_{1,k}w_1+···+a_{m,k}w_m,
+$$
+the matrix of $T$ with respect to the bases $(v_1,...,v_n)$ and $(w_1,...,w_m)$; we denote it by 
+$$
+M(T,(v_1,...,vn),(w_1,...,w_m))
+$$
+![1554693818142](img/1554693818142.png)
+
+### Invertibility
 
 
 
