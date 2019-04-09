@@ -393,7 +393,34 @@ $$
 
 ### Norms
 
-1. $∥(z1 ,...,zn)∥=\sqrt{|z1|^2+···+|zn|^2}.$ 
+1. $ \lVert (z1 ,...,zn)\rVert=\sqrt{|z1|^2+···+|zn|^2}.$ 
+
+2. $\lVert p\rVert=\sqrt{\int^1_0 |p(x)|^2dx} $ .
+
+3. Two vectors $u,v ∈V​$ are said to be orthogonal if $⟨u,v⟩=0​$.
+
+4. **Pythagorean Theorem**:  If u,v are orthogonal vectors in V,then 
+   $$
+   ∥u+v∥^2 =∥u∥^2+∥v∥^2.
+   $$
+
+5. **Cauchy-Schwarz Inequality**：If u,v ∈V, then
+   $$
+   |⟨u,v⟩|≤∥u∥∥v∥.
+   $$
+   This inequality is an equality if and only if one of $u,v​$ is a scalar multiple of the other. 
+
+6. **Triangle Inequality**: If $u,v ∈V$, then
+   $$
+   ∥u+v∥≤∥u∥+∥v∥.
+   $$
+   This inequality is an equality if and only if one of $u,v$ is a nonnegative multiple of the other.
+
+7. **Parallelogram Equality**: If $u,v ∈V​$, then 
+   $$
+   \lVert u+v\rVert^2 +∥u−v∥^2 =2 (∥u∥^2 +∥v∥^2 ).
+   $$
+    
 
 
 
