@@ -327,15 +327,73 @@ $$
 
 1.  An operator $T ∈L(V)$ has a diagonal matrix with respect to some basis of $V$ if and only if $V$ **has a basis consisting of eigenvectors of** $T$. 
 
+2.  If $T ∈L(V)$ has $dimV$ distinct eigenvalues, then $T$ has a diagonal matrix with respect to some basis of $V$.
+
+3. Suppose $T ∈L(V)$. Let $λ_1,...,λ_m$ denote the distinct eigenvalues of $T$. Then the following are equivalent:
+
+   - $T$ has a diagonal matrix with respect to some basis of $V$; 
+
+   - $V$ has a basis consisting of eigenvectors of $T$; 
+
+   - there exist one-dimensional subspaces $U_1,...,U_n$ of $V$, each invariant under $T$, such that $V =U_1⊕···⊕U_n$; 
+
+   - $V =null(T −λ_1I)⊕···⊕null(T −λ_mI)$; 
+
+     >  every vector in V is a linear combination of eigenvectors of T. Hence
+     > $$
+     > V =null(T −λ_1I)+···+null(T −λ_mI).
+     > $$
+     > $null(T- \lambda _mI)=\{x|(T-\lambda_mI)x=0\} $, where $x$ is the eigenvector of $\lambda_m$. Thus eigenvectors are linearly independent.  This implies  that the sum is a direct sum.
+
+   -  $dimV =dimnull(T −λ_1I)+···+dimnull(T −λ_mI)$. 
+
+### Invariant Subspaces on Real Vector Spaces
+
+1. Every operator on a *ﬁnite-dimensional*, *nonzero*, *real vector space* has an invariant subspace of dimension **$1$ or $2$.**
+2.  Every operator on an **odd-dimensional** real vector space has **an eigenvalue**.
 
 
 
+## Inner-Product Spaces
 
+### Inner Products
 
+1. the **complex conjugate** of $λ$ is deﬁned by $ \widetilde{\lambda}=a−bi$, 
 
+2. $|λ|^2 =\lambda \widetilde{\lambda}$
 
+3. **Properites** of *inner product*:
 
+   - **positivity** 
+     $$
+     ⟨v,v⟩≥ 0  \quad \forall v ∈ V;
+     $$
 
+   - **deﬁniteness** 
+     $$
+     ⟨v,v⟩=0 \quad iff \quad v =0;
+     $$
+
+   - **additivity in ﬁrst slot** (also in second slot)
+     $$
+     ⟨u+v,w⟩=⟨u,w⟩+⟨v,w⟩\quad \forall u,v,w ∈ V;
+     $$
+
+   - **homogeneity in ﬁrst slot** (also in second slot)
+     $$
+     ⟨av,w⟩=a⟨v,w⟩\quad \forall a∈ F \quad and \quad \forall v,w∈ V;
+     $$
+
+   - **conjugate symmetry** 
+     $$
+     ⟨v,w⟩=\widetilde{⟨w,v⟩}\quad  \forall v,w∈ V.
+     $$
+
+4. An ***inner-product space*** is a vector space V along with an inner product on V. 
+
+### Norms
+
+1. $∥(z1 ,...,zn)∥=\sqrt{|z1|^2+···+|zn|^2}.$ 
 
 
 
