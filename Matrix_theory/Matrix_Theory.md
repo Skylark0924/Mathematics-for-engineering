@@ -175,18 +175,18 @@ A linear map from $V$ to $W$ is a function $T$ : $V →W$ with the following pro
 
 1. $null T ={v ∈V : Tv=0}​$ 
 
-   - If $T ∈L(V,W)​$, then $nullT​$ is a subspace of $V​$. 
+   - If $T ∈L(V,W)$, then $null T$ is a subspace of $V$. 
 
    - Let $T ∈L(V,W)$. Then $T$ is **injective（单射）** if and only if $nullT ={0}$. 
 
      (A linear map $T: V → W​$ is called injective if whenever $u,v ∈ V​$ and $Tu = Tv​$, we have $u = v​$.)
 
-2. $rangeT ={Tv: v ∈V}$
+2. $rangeT ={Tv: v ∈V}​$
 
-   -  If $T ∈L(V,W)$, then $rangeT$ is a subspace of $W$. 
+   -  If $T ∈L(V,W)​$, then $rangeT​$ is a subspace of $W​$. 
    - A linear map $T: V → W$ is called **surjective（满射）** if its range equals $W$.
 
-3. If $V$ is ﬁnite dimensional and $T ∈L(V,W)$, then $rangeT$ is a ﬁnite-dimensional subspace of $W$ and 
+3. If $V​$ is ﬁnite dimensional and $T ∈L(V,W)​$, then $rangeT​$ is a ﬁnite-dimensional subspace of $W​$ and 
 
    <font color=#FF0000>$dimV =dim nullT +dimrangeT​$</font>
 
@@ -210,7 +210,7 @@ A linear map from $V$ to $W$ is a function $T$ : $V →W$ with the following pro
 ### The Matrix of a Linear Map
 
 $$
-\left[
+M(T)=\left[
 \begin{matrix}
 a_{1,1} & \dots & a_{1,n} \\
 \vdots &  & \vdots \\
@@ -223,13 +223,135 @@ Let $T ∈L(V,W)​$. Suppose that $(v_1,...,v_n)​$ is a basis of $V​$ and $
 $$
 Tv_k =a_{1,k}w_1+···+a_{m,k}w_m,
 $$
-the matrix of $T$ with respect to the bases $(v_1,...,v_n)$ and $(w_1,...,w_m)$; we denote it by 
+Sthe matrix of $T$ with respect to the bases $(v_1,...,v_n)$ and $(w_1,...,w_m)$; we denote it by 
 $$
 M(T,(v_1,...,vn),(w_1,...,w_m))
 $$
 ![1554693818142](img/1554693818142.png)
+$$
+M(Tv)=\left[
+\begin{matrix}
+a_{1,1}b_1+ \dots+ a_{1,n}b_n \\
+\vdots \\
+a_{m,1}b_1+ \dots+  a_{m,n}b_n
+\end{matrix}
+\right]
+$$
 
 ### Invertibility
+
+A linear map $T ∈L(V,W)$ is called invertible if there exists a linear map $S ∈L(W,V)$ such that $ST$ equals the identity map on $V$ and $TS$ equals the identity map on W. 
+
+- <font color=#FF0000> A linear map is **invertible** if and only if it is **injective** and **surjective**. </font>
+
+- Two vector spaces are called **isomorphic（同构）** if there is an invertible linear map from one vector space onto the other one.
+
+  -  two isomorphic spaces have the same properties; 
+  - we can think of an invertible linear map as a **relabeling** of the elements of a vector space. 
+  - Two ﬁnite-dimensional vector spaces are isomorphic if and only if they have the **same dimension.**
+
+-  If $V$ and W are ﬁnite dimensional, then $L(V,W)$ is ﬁnite dimensional and 
+  $$
+  dimL(V,W)=(dimV)(dimW).
+  $$
+
+- Suppose $V$ is ﬁnite dimensional. If $T ∈L(V)$, then the following are equivalent: 
+
+  - $T$ is invertible; 
+  - $T$ is injective;
+  - $T$ is surjective.
+
+## Polynomials
+
+Recall that a function $p: F → F​$ is called a polynomial with coefﬁcients in $F​$ if there exist $a_0,...,a_m ∈F​$ such that 
+$$
+p(z)=a_0+a_1 z+a_2z_2+···+a_mz_m
+$$
+
+### Degree
+
+1. If all the coefﬁcients $a_0,...,a_m$ equal $0$, then we say that $p$ has degree $−∞$.
+
+2. A polynomial may have **more than one** degree.
+
+3.  A number $λ∈F$ is called a **root** of a polynomial $p∈P(F)$ if 
+   $$
+   p(λ)=0
+   $$
+
+4. Suppose $p ∈P (F)$ is a polynomial with degree $m ≥ 1$ . Let $λ ∈ F$. Then λ is a root of $p$ if and only if there is a polynomial $q∈P(F)$ with degree $m−1$ such that
+   $$
+   p(z)=(z−λ)q(z)
+   $$
+
+5. Suppose $p∈P(F)$ is a polynomial with degree $m≥0$. Then $p$ has at most $m$ distinct roots in $F$. 
+
+6. Suppose $a_0,...,a_m ∈F.$ If 
+   $$
+   a_0+a_1 z+a_2z^2+···+a_mz^m =0
+   $$
+    for all $z∈F$, then $a_0 =···=a_m =0$. 
+
+   It implies that $(1,z,\dots,z^m)$ is linearly independent in $P(F)$ for every nonnegative integer $m$.
+
+7. **Division Algorithm:**  Suppose $p,q ∈P (F),​$ with $p \neq 0​$. Then there exist polynomials $s,r ∈P(F)​$ such that 
+   $$
+   q=sp+r
+   $$
+   and $\deg r<\deg p$
+
+
+
+## Eigenvalues and Eigenvectors
+
+### Invariant Subspaces
+
+1. For $T ∈L(V)$ and $U$ a subspace of $V$, we say that $U$ is **invariant under $T$** if $u ∈ U$ implies $Tu∈ U$. In other words, $U$ is invariant under T if $T|_U$ is an operator on $U$. 
+2. If $T\in L(V)$, $null T$ and $range T$ is invariant under $T$.
+3.  **Eigenvalue** : Speciﬁcally, a scalar $λ ∈ F$ is called an **eigenvalue** of $T ∈L(V)$ if there exists a nonzero vector  $u ∈ V$ such that $Tu= λu$.
+4. The equation $Tu= λu$ is equivalent to $(T −λI)u = 0$, so $λ$ is an eigenvalue of $T$ if and only if $T −λI$ is **not injective**.  $λ$ is an eigenvalue of $T$ if and only if $T−λI$ is **not invertible**, and this happens if and only if $T −λI$ is **not surjective**. 
+5.  **Eigenvector:** An operator has an eigenvalue if and only if there exists a nonzero vector in its domain that gets sent by the operator to a scalar multiple of itself.
+6.  Let $T ∈L(V)$. Suppose $λ_1 ,...,λ_m$ are distinct eigenvalues of $T$ and $v_1 ,...,v_m$ are corresponding nonzero eigenvectors. Then $(v_1 ,...,v_m)$ is linearly independent.
+
+### Upper-Triangular Matrices
+
+1. Every operator on a ﬁnite-dimensional, nonzero,  complex vector space has an eigenvalue. 
+2. Suppose $T ∈L(V)​$ and $(v_1,...,v_n)​$ is a basis of $V.​$ Then the following are equivalent: 
+   -  the matrix of $T​$ with respect to $(v_1,...,v_n)​$ is upper triangular; 
+   -  $Tv_k ∈span(v_1,...,v_k)​$ for each $k=1,...,n​$ ; 
+   -  $span(v_1,...,v_k)$ is invariant under T for each $k=1,...,n$ .
+3. Suppose  $T ∈L(V)$ has an upper-triangular matrix with respect to some basis of $V$. Then $T$ is invertible if and only if all the entries on the **diagonal** of that upper-triangular matrix are **nonzero**.
+4.  Suppose $T ∈L(V)$ has an upper-triangular matrix with respect to some basis of $V$. Then the **eigenvalues** of $T$ consist precisely of **the entries on the diagonal** of that upper-triangular matrix.
+
+### Diagonal Matrices
+
+1.  An operator $T ∈L(V)$ has a diagonal matrix with respect to some basis of $V$ if and only if $V$ **has a basis consisting of eigenvectors of** $T$. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
