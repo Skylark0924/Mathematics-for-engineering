@@ -16,7 +16,7 @@
 - **矩阵是线性空间里的变换的描述，矩阵与向量相乘，就是实施运动（变换）的过程。**
 - **矩阵是线性空间中的线性变换的一个描述。在一个线性空间中，只要我们选定一组基，那么对于任何一个线性变换，都能够用一个确定的矩阵来加以描述。**
 - **所谓相似矩阵，就是同一个线性变换的不同的描述矩阵，它们的本质是一样的，所以本征值相同。**
-- **矩阵不仅可以作为线性变换的描述，而且可以作为一组基的描述。而作为变换的矩阵，不但可以把线性空间中的一个点给变换到另一个点去，而且也能够把线性空间中的一个坐标系（基）表换到另一个坐标系（基）去。而且，变换点与变换坐标系，具有异曲同工的效果。（运动等价于坐标系的变换，即运动是相对的！）**
+- **矩阵不仅可以作为线性变换的描述，而且可以作为一组基的描述。而作为变换的矩阵，不但可以把线性空间中的一个点给变换到另一个点去，而且也能够把线性空间中的一个坐标系（基）变换到另一个坐标系（基）去。而且，变换点与变换坐标系，具有异曲同工的效果。（运动等价于坐标系的变换，即运动是相对的！）**
 
 -------
 
@@ -197,7 +197,7 @@ A linear map from $V$ to $W$ is a function $T$ : $V →W$ with the following pro
    dimnullT =dimV −dimrangeT \ge dim V-dimW >0
    $$
 
-5.  If $V$ and $W$ are ﬁnite-dimensional vector spaces such that , <font color=#FF8C00> $dimV<dimW$</font>then no linear map from $V$ to $W$ is **surjective**.
+5.  If $V$ and $W$ are ﬁnite-dimensional vector spaces such that <font color=#FF8C00> $dimV<dimW$</font>, then no linear map from $V$ to $W$ is **surjective**.
    $$
    dimrangeT =dimV −dimnullT ≤dimV < dimW​
    $$
@@ -205,9 +205,9 @@ A linear map from $V$ to $W$ is a function $T$ : $V →W$ with the following pro
 
 **Conclusions:**
 
-1. <font color=#FF8C00>A homogeneous system of linear equations in which there are more variables than equations must have nonzero solutions.</font>
+1. <font color=#FF8C00>**A homogeneous system (齐次系统) of linear equations in which there are more variables than equations must have nonzero solutions.**</font> ( $dimV > dimW$, 非单射, 核空间维度大于零, 即存在非零解) 
 
-2. <font color=#FF8C00>An inhomogeneous system of linear equations in which there are more equations than variables has no solution for some choice of the constant terms.</font>
+2. <font color=#FF8C00>**An inhomogeneous system (非齐次系统) of linear equations in which there are more equations than variables has no solution for some choice of the constant terms.**</font> ( $dim V <dimW$, 非满射, 像空间维度小于W, W中部分值无解)
 
 ### The Matrix of a Linear Map
 
@@ -225,7 +225,7 @@ Let $T ∈L(V,W)$. Suppose that $(v_1,...,v_n)$ is a basis of $V$ and $(w_1,...,
 $$
 Tv_k =a_{1,k}w_1+···+a_{m,k}w_m,
 $$
-Sthe matrix of $T$ with respect to the bases $(v_1,...,v_n)$ and $(w_1,...,w_m)$; we denote it by 
+the matrix of $T$ with respect to the bases $(v_1,...,v_n)$ and $(w_1,...,w_m)$; we denote it by 
 $$
 M(T,(v_1,...,vn),(w_1,...,w_m))
 $$
@@ -250,7 +250,7 @@ A linear map $T ∈L(V,W)$ is called invertible if there exists a linear map $S 
 
   -  two isomorphic spaces have the same properties; 
   - we can think of an invertible linear map as a **relabeling** of the elements of a vector space. 
-  - Two ﬁnite-dimensional vector spaces are isomorphic if and only if they have the **same dimension.**
+  - Two ﬁnite-dimensional vector spaces are isomorphic if and only if they have the **same dimension.**  ($dimV=dimW$, 核空间为0, 像空间为W, 既是单设又是满射, 故可逆) (且其齐次方程下的变换只有零解, 故基下的矩阵为列线性无关的方阵, 即为满秩矩阵, 故可逆)
 
 -  If $V$ and W are ﬁnite dimensional, then $L(V,W)$ is ﬁnite dimensional and 
   $$
@@ -463,11 +463,11 @@ $$
      A^{m}=P D^{m} P^{-1}=P \operatorname{diag}\left(\lambda_{1}^{m}, \lambda_{2}^{m} \cdots, \lambda_{n}^{m}\right) P^{-1}
      $$
 
-     特别地, 实对称矩阵可以正交对角化, 即存在正交矩阵Q使得 
+     特别地, **实对称矩阵可以正交对角化**, 即存在正交矩阵Q使得 
      $$
      Q^{-1} A Q=Q^{T} A Q=\operatorname{diag}\left(\lambda_{1}, \lambda_{2} \cdots, \lambda_{n}\right)
      $$
-     于是利用坐标变换x = Qy即可将实二次型f(x) = xTAx化为标准型
+     于是利用坐标变换$x = Qy$即可将实二次型$f(x) = x^T Ax$化为标准型
      $$
      f=\lambda_{1} y_{1}^{2}+\lambda_{2} y_{2}^{2}+\cdots+\lambda_{n} y_{n}^{2}
      $$
@@ -496,24 +496,24 @@ $$
 $$
 即乘积AB的第i行第j列的元素等于$\sum_{k=1}^{p} a_{i k} b_{k j}$, 这正是矩阵乘法的“左行右列”规则
 
-2. <font color=orange>矩阵乘一个列向量等于该矩阵所有列的线性组合, 组合系数即是该列向量的对应元素. 同理, 一个行向量左乘一个矩阵等于该矩阵所有行的线性组合, 组合系数即是该行向量的对应元素</font>
+2. <font color=orange>**矩阵乘一个列向量等于该矩阵所有列的线性组合, 组合系数即是该列向量的对应元素. 同理, 一个行向量左乘一个矩阵等于该矩阵所有行的线性组合, 组合系数即是该行向量的对应元素**</font>
    $$
    C_{j}=A B_{j}, \quad C^{i}=A^{i} B
    $$
    即矩阵AB的第j列是A的列向量的线性组合, 组合系数恰为矩阵B的第j列的相应元素; AB的 第i行是B的行向量的线性组合, 组合系数恰为矩阵A的第i行的相应元素. 
 
-3. 方程组$Ax = b$有解 $⇐⇒$ $b$是系数矩阵A的列的线性组合 $⇐⇒ r(A) = r(A,b)$, 即系数矩阵的秩等于增广矩阵的秩. 
+3. **方程组$Ax = b$有解 $⇐⇒$ $b$是系数矩阵A的列的线性组合 $⇐⇒ r(A) = r(A,b)$, 即系数矩阵的秩等于增广矩阵的秩.** 
 4. 齐次线性方程组$Ax = 0$有非零解 $⇐⇒ A$的列向量线性相关; 有唯一解(即零解)$⇐⇒ A$的列向量线性无关.
 
 ### 行列式
 
-$n$阶方阵$A = (a_{ij})$的行列式记为$|A|$(另一个通用记号是$detA$), 它具有性质$|AB| = |A||B|.$ 
+$n$阶方阵$A = (a_{ij})$的行列式记为$|A|$(另一个通用记号是$detA$), 它具有性质,<font color=red>**$|AB| = |A||B|.$** </font>
 
 ### 迹
 
 方阵$A$的**迹** $trA$ 是$A$的对角线元素之和 $\sum_{i=1}^na_{ii}$
 
-**性质：**
+**性质：** <font color=red>**注意第三条**</font>
 
 ![1559050474520](./img/1559050474520.png)
 
@@ -529,7 +529,7 @@ $n$阶方阵$A = (a_{ij})$的行列式记为$|A|$(另一个通用记号是$detA$
 
 <font color=orange>由于矩阵可以看作基下的变换, 因此秩就是**变换后的空间维度**</font>. <font color=whitblue>**列空间**是**变换后基的坐标**, 因此秩也相当于变换后列空间的维数</font>
 
-矩阵秩的另一个极端是1. 一个非零矩阵A的秩为$1 ⇐⇒ A$是一个非零列矩阵与一个非零行矩阵的乘积, 即存在列向量$α,β$使得$A = αβ^T$. 因此秩为1的方阵的高次幂可以如下算出:
+矩阵秩的另一个极端是1. 一个非零矩阵A的秩为$1 ⇐⇒ A$是一个非零列矩阵与一个非零行矩阵的乘积, 即存在列向量$α,β$使得$A = αβ^T$. 因此秩为1的方阵的高次幂可以如下算出:(满秩分解)
 $$
 A^{m}=\left(\alpha \beta^{T}\right)^{m}=\left(\beta^{T} \alpha\right)^{m-1} \alpha \beta^{T}=\left(\beta^{T} \alpha\right)^{m-1} A
 $$
@@ -540,7 +540,7 @@ $$
 
 ### 余子式 代数余子式 伴随
 
-对任意$n$阶方阵 $A = (a_{ij})$, 去掉第$i$行第$j$列后所剩余的$n−1$阶方阵的行列式称为元素$a_{ij}$ 的**余子式**, 记为$M_{ij}$. 而$(−1)^{i+j}M_{ij}$称为元素$a_{ij}$的**代数余子式**, 记为$A_{ij}$. n阶方阵 
+对任意$n$阶方阵 $A = (a_{ij})$, 去掉第$i$行第$j$列后所剩余的$n−1$阶方阵的**行列式**称为元素$a_{ij}$ 的**余子式**, 记为$M_{ij}$. 而$(−1)^{i+j}M_{ij}$称为元素$a_{ij}$的**代数余子式**, 记为$A_{ij}$. n阶方阵 
 $$
 \left( \begin{array}{cccc}{A_{11}} & {A_{21}} & {\cdots} & {A_{n 1}} \\ {A_{12}} & {A_{22}} & {\cdots} & {A_{n 2}} \\ {\cdots} & {\ldots} & {\ldots} & {\cdots} \\ {A_{1 n}} & {A_{2 n}} & {\cdots} & {A_{n n}}\end{array}\right)
 $$
@@ -562,7 +562,7 @@ $$
 
 ### 线性方程组
 
-如果线性 方程组$x_{1} \alpha_{1}+x_{2} \alpha_{2}+\cdots+x_{s} \alpha_{s}=0
+如果线性方程组$x_{1} \alpha_{1}+x_{2} \alpha_{2}+\cdots+x_{s} \alpha_{s}=0
 $仅有零解, 则称向量组S是线性无关的. 否则就称S是 **线性相关** 的
 
 **极大线性无关组**: 齐次线性方程组的解都可以由线性无关的$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{s}$的线性表示
@@ -577,7 +577,7 @@ $$
 
 ![1559096364902](./img/1559096364902.png)
 
-**矩阵的一次行初等变换相当于左乘一个初等矩阵, 而矩阵的一次列初等变换相当于右乘一 个初等矩阵.** 
+**矩阵的一次行初等变换相当于左乘一个初等矩阵, 而矩阵的一次列初等变换相当于右乘一个初等矩阵.** 
 
 **目的:** 将矩阵化为**Hermite型**
 
@@ -589,11 +589,9 @@ $$
 
 ![1559096871117](./img/1559096871117.png)
 
-**可用于计算小秩矩阵的高次幂**
+**可用于计算小秩矩阵的高次幂**不唯一, 矩阵L与R的秩显然等于矩阵A的秩.
 
-不唯一, 矩阵L与R的秩显然等于矩阵A的秩.
-
-**Proof:**
+**Proof:**  **(Sylvester不等式)**
 $$
 r(L_{m\times p})+r(R_{p\times n})-p\leq r(A_{m\times n})\leq \min\{r(L),r(R)\}
 $$
@@ -614,7 +612,7 @@ $$
 
 ![1559098618853](./img/1559098618853.png)
 
-可知, 相似对角矩阵$D$的对角线元素即为$A$的特征值.
+可知, **相似对角矩阵$D$的对角线元素即为$A$的特征值.**
 
 ### 特征值
 
@@ -625,6 +623,8 @@ $n-r(\lambda_i I-A)$为特征值 $\lambda_i$的几何重数. 根据定理1.2.2  
 #### 代数重数
 
 ![1559099605347](./img/1559099605347.png)
+
+<font color=orange>**代数重数 $\geq$ 几何重数, 因为有些有重根的特征值不一定有与重根数相同的线性无关的特征向量**</font>
 
 #### 谱半径
 
@@ -649,13 +649,13 @@ $$
 $$
 A=PDP^{-1}
 $$
-这很好理解, 代数重数表示特征值重根的次数, 几何重数则是其对应的线性无关的特征向量的个数, 如果二者相等, 即说明 $A$ 具有 $n$ 个线性无关的特征向量, 这样 $P$ 才能是可逆矩阵, 对角化才存在.
+这很好理解, **代数重数表示特征值重根的次数, 几何重数则是其对应的线性无关的特征向量的个数,** 如果二者相等, 即说明 $A$ 具有 $n$ 个线性无关的特征向量, 这样 $P$ 才能是可逆矩阵, 对角化才存在.
 
 ## 线性空间
 
 ![1559101111071](.\img\1559101111071.png)
 
- $F^n$中的数乘满足下列四个条件(以下将$F^n$记为$V$ ): 
+$F^n$中的数 乘满足下列四个条件(以下将$F^n$记为$V$): 
 
 ![1559101251315](.\img\1559101251315.png)
 
@@ -665,7 +665,7 @@ $$
 
 #### 过渡矩阵
 
-矩阵$P = (p_{ij})$称为由$α$–基到$β$–基的**过渡矩阵**, 显然, 此时由$β$–基到$α$–基的过渡矩阵 为$P^{−1}$
+矩阵$P = (p_{ij})$称为由$α$–基到$β$–基的**过渡矩阵**, 显然, 此时由$β$–基到$α$–基的过渡矩阵为$P^{−1}$
 $$
 \left\{\begin{array}{l}{\beta_{1}=p_{11} \alpha_{1}+p_{21} \alpha_{2}+\cdots+p_{n 1} \alpha_{n}} \\ {\beta_{2}=p_{12} \alpha_{1}+p_{22} \alpha_{2}+\cdots+p_{n 2} \alpha_{n}} \\
 \dots\\ {\beta_{n}=p_{1 n} \alpha_{1}+p_{2 n} \alpha_{2}+\cdots+p_{n n} \alpha_{n}}\end{array}\right.
@@ -677,9 +677,17 @@ $$
 
 #### 坐标变换公式
 
+$$
+\beta=\alpha P\\
+\beta y =\alpha P y= X向量 = \alpha x\\
+x=Py, \quad y=Px 
+$$
+
 ![1559101778298](D:\Github\Mathematics-for-engineering\Matrix_theory\img\1559101778298.png)
 
-![1559104615869](.\img\1559104615869.png)
+<font color=orange>**注意**: **$x=Py, y=P^{-1}x$**  </font>
+
+![1559104615869](.\img\1559104615869.png) 
 
 ![1559104642906](.\img\1559104642906.png)
 
@@ -703,7 +711,7 @@ $$
 
 ![1559105021942](.\img\1559105021942.png)
 
-对内积空间V 的任意一组基$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$, 利用`Gram-Schmidt`正交化方法可求得V 的 一个标准正交基. 
+对内积空间V 的任意一组基$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$, 利用`Gram-Schmidt`正交化方法<font color=red>**(见QR分解)**</font>可求得V 的 一个标准正交基. 
 
 #### 投影向量
 
@@ -719,15 +727,15 @@ $Q^* Q=I$
 
 ![1559105950061](.\img\1559105950061.png)
 
-<font color=red>酉矩阵的逆矩阵就是其共轭转置矩阵! </font>
+<font color=red>**酉矩阵的逆矩阵就是其共轭转置矩阵!** </font>
 
-#### Herimite矩阵
+#### Hermite矩阵
 
 复共轭对称矩阵  $A^*=A$
 
 ![1559106286594](.\img\1559106286594.png)
 
-### 正定
+###  正定​
 
 ![1559109995340](.\img\1559109995340.png)
 
@@ -735,15 +743,23 @@ $Q^* Q=I$
 
 ![1559110047040](.\img\1559110047040.png)
 
+**第四条可由 第四章的 Cholesky 分解证得 ** 对称正定矩阵一定存在 $A=G^*G$
+
 #### 内积与正定矩阵
+
+<font color=orange>**内积的普遍形式:**</font>
+
+<strong style="background:#FF7F50">度量矩阵一定是正定Hermite矩阵</strong> <font color=red>$(\alpha, \beta)=y^*Ax$</font>
+
+![1560083274147](.\img\1560083274147.png)
 
 ![1559110250059](.\img\1559110250059.png)
 
-有限维实或复线性空间上的任意 两个内积**本质上是完全相同的**!
+有限维实或复线性空间上的任意两个内积**本质上是完全相同的**! <font color=orange>**要求矩阵正定是为了满足内积定义中的正定性**</font>
 
+标准正交基可以使内积的计算大为简化, 即在标准正交基下, 向量的内积就是对应坐标的(共轭)乘积之和 <font color=orange>**本质是: 标准正交基的度量矩阵为单位矩阵**</font>
 
-
-
+![1560083515623](.\img\1560083515623.png)
 
 # 第二章 矩阵与线性变换
 
@@ -794,11 +810,10 @@ $$
 
 #### 补空间
 
- $V=U\oplus W$，则W是U的补子空间。                                                                                                       补空间不唯一（反例：二维空间中两个相交在原点的向量）
+ $V=U\oplus W$，则W是U的补子空间。  补空间不唯一（反例：二维空间中两个相交在原点的向量）
 
 1. 基的扩充定理
-2. 
-3. 如果是直和，则任意$\gamma\in U+W$可以唯一由U和W中的两个元素表示，并且零向量也表示唯一（反证法），这三个命题等价。
+3. 如果是直和，则任意$\gamma\in U+W$可以**唯一**由U和W中的两个元素表示，并且零向量也表示$唯一$（反证法），这三个命题等价。
 
 ### 四个子空间
 1. 零空间$N(A)$：齐次线性方程组$Ax=0$的解空间
@@ -814,34 +829,78 @@ $$
 
 ![](./img/15529566462652.png)
 
+#### 四个子空间与其满秩分解的关系
+
+$A=LR, Ax=0$
+
+1. $N(A)=N(H_A)=N(R)$
+2. $R(A)=R(L)$
+
+$A^*=R^*L^*, yA^*=0$
+
+1. $R(A^*)=R(R^*)$
+2. $N(A^*)= N(L^*)$
+
 ![1559118780039](.\img\1559118780039.png)
 
 ## 线性变换
 
-线性变换应满足可加性和齐次性，U到V的线性变换全体记为$Hom(U, V)$ 
+线性变换应满足**可加性和齐次性**，**即为保持线性性质的映射**
+
+#### 线性变换的性质
+
+![1560132601074](.\img\1560132601074.png)
+
+<font color=orange>**注意: 线性变换必须保持原点不动, 因此平移变换不是线性变换**</font> 极坐标, 柱坐标, 球面坐标变换都不是
+
+#### 线性变换下的坐标变换
+
+U到V的线性变换全体记为$Hom(U, V)$ 
+
 1. **核：** “零点”集$ \{\alpha \in U: \sigma(\alpha)=0\} $，记作$Ker(\sigma)$或$\sigma^{-1}(0)$
 
 2. **像：** “函数值”的集合$\{\alpha \in V: \exists \beta \in U, 使得\alpha=\sigma(\beta)\}$，记作$Im(\sigma)$或$\sigma(U)$
 
 3. $Ker\sigma和Im\sigma$分别是U和V的子空间，其维数记作$\eta (\sigma)与r(\sigma)$, 称为 $\sigma$ 的**零度与秩**
-    **理解：** 线性变换$\sigma=Ax$对应矩阵A，零变换对应零矩阵，恒等变换对应恒等矩阵；变换的核与矩阵零空间$N(A)$有关，像与矩阵的列空间$R(A)$。当选取标准基时，线性变换几乎就是左乘一个矩阵A，进一步，设$A=(a_{ij})$，则
+    **理解：** 线性变换$\sigma=Ax$对应矩阵A，零变换对应零矩阵，恒等变换对应恒等矩阵；变换的核与矩阵零空间$N(A)$有关，像与矩阵的列空间$R(A)$。
+    
+4. ![1560133976325](.\img\1560133976325.png)
+
+5. ![1560133872056](.\img\1560133872056.png)
+
+6. ![1560134107602](.\img\1560134107602.png)
+
+    **当选取标准基时，线性变换几乎就是左乘一个矩阵A**，进一步，设$A=(a_{ij})$，则
     $$
-\begin{align*}
+    \begin{align*}
     \sigma(\alpha)&=A(x_1, x_2, \dots, x_n)^T\\
-&=(a_{11}x_1+a_{12}x_2+\dots+a_{1n}x_n,\dots,a_{n1}x_1+a_{n2}x_2+\dots+a_{nn}x_n)^T \\&=(\sigma_1(\alpha),\dots,\sigma_n(\alpha))
+    &=(a_{11}x_1+a_{12}x_2+\dots+a_{1n}x_n,\dots,a_{n1}x_1+a_{n2}x_2+\dots+a_{nn}x_n)^T \\&=(\sigma_1(\alpha),\dots,\sigma_n(\alpha))
     \end{align*}
     $$
     即线性变换不过是多个多元线性函数
-    
-4. **不同基下的矩阵的关系：** 设$\alpha和\beta$是U的两组基，P是由$\alpha-基到\beta-基$的过渡矩阵；设$\alpha’和\beta’$是V的两组基，Q是由$\alpha’-基到\beta’-基$的过渡矩阵；设$\sigma\in Hom(U,V)$关于$\alpha-基和\alpha’-基$的矩阵为A，关于$\beta-基 和\beta’-基$的矩阵为B：
-    $$
-    B=Q^{-1}AP
-    $$
-    假定U=V且$\alpha-基等于\alpha’-基$，$\beta-基等于\beta’基$，于是：
+
+#### 线性变换在不同基下的矩阵关系
+
+ 设$\alpha和\beta$是U的两组基，$A$是由$\alpha-基到\beta-基$的过渡矩阵；设$\alpha’和\beta’$是V的两组基，$B$是由$\alpha’-基到\beta’-基$的过渡矩阵；设$\sigma\in Hom(U,V)$关于$\alpha-基和\alpha’-基$的矩阵为$P$，关于$\beta-基 和\beta’-基$的矩阵为$Q$：
+$$
+B=Q^{-1}AP
+$$
+$$
+\begin{align*}
+\beta'&=Q^{-1}\beta\\
+\alpha'&=P^{-1}\alpha\\
+\beta&=A\alpha\\
+\beta'&=B\alpha'\\
+Q^{-1}(A\alpha)&=B(P^{-1}\alpha)\\
+Q^{-1}A&=BP^{-1}
+\end{align*}
+$$
+
+假定U=V且$\alpha-基等于\alpha’-基$，$\beta-基等于\beta’基$，于是：
 $$
     B=P^{-1}AP​
 $$
-​		则A与B**相似**, <font color=orange>即它们不过是同一线性变换在不同基下的矩阵而已, 而矩阵P不过是两个基之间的过渡矩阵. </font>
+​		则A与B**相似**, <font color=orange>**即它们不过是同一线性变换在不同基下的矩阵而已, 而矩阵P不过是两个基之间的过渡矩阵**. </font>
 
 ![1559120719817](.\img\1559120719817.png)
 
@@ -849,7 +908,11 @@ $$
 
 #### 同构
 
- $\sigma: U\rightarrow V$ 既是单射又是满射；两个空间不仅元素对应，运算也对应；并且**维度相同**
+**定义**
+
+ $\sigma: U\rightarrow V$ 既是单射又是满射称为同构；
+
+两个空间不仅元素对应，运算也对应；并且**维度相同**
 
 ![1559135501614](.\img\1559135501614.png)
 
@@ -906,7 +969,9 @@ $$
 
 ## 内积空间中的线性变换
 
-本节探讨 线性变换是否会影响长度, 角度和距离
+<strong style="background:#FF7F50">由于内积空间赋予了空间距离的定义</strong>
+
+本节探讨 线性变换是否会影响长度, 角度和距离 
 
 #### 等距变换/正交变换
 
@@ -923,6 +988,12 @@ $$
 ![1559195012651](.\img\1559195012651.png)
 
 等距变换保持长度和内积, 从而也保持向量之 间的角度, 因此等距变换不改变图形的形状,  但一般的线性变换则可能将图形变得面目全非
+
+![1560146944852](.\img\1560146944852.png)
+
+![1560146980112](.\img\1560146980112.png)
+
+![1560147018715](.\img\1560147018715.png)
 
 #### Householder变换
 
@@ -960,6 +1031,10 @@ Schur三角化定理是化简矩阵的基础, 用于计算方阵的任意次幂 
 
 <strong style="background:#FF7F50">对于任意复方阵,都能找到一个酉矩阵将其化为上三角矩阵</strong>
 
+![1560746232078](.\img\1560746232078.png)
+
+![1560746392985](.\img\1560746392985.png)
+
 ![1559392607887](.\img\1559392607887.png)
 
 #### 分块Schur 三角化定理
@@ -968,18 +1043,26 @@ Schur三角化定理是化简矩阵的基础, 用于计算方阵的任意次幂 
 
 ![1559392649569](.\img\1559392649569.png)
 
-设A是$n$阶严格上三角矩阵 (对角线也为0) , 则$A^n = 0$.
+<strong style="background:#FF7F50">设A是$n$阶严格上三角矩阵 (对角线也为0) , 则$A^n = 0$. 称为幂零块 </strong>
 
-#### Cayley-Hamilton
+#### Cayley-Hamilton定理
 
 因此, 可以证明`Cayley-Hamilton`定理, 即设矩阵$A$的特征多项式为$f(λ),$ 则有$f(A) = 0$.
 $$
 f(A)=\left(A-\lambda_{1} I\right)^{n_{1}}\left(A-\lambda_{2} I\right)^{n_{2}} \cdots\left(B-\lambda_{s} I\right)^{n_{s}}
 $$
 
+![1560154393073](.\img\1560154393073.png)
+
+![1560154431041](.\img\1560154431041.png)
+
 #### Sylvester降幂公式
 
 ![1559393878072](.\img\1559393878072.png)
+
+![1560154102764](.\img\1560154102764.png)
+
+<strong style="background:#FF7F50">注意:  $AB$ 和 $BA$ 的非零特征值相同, 其余补0</strong> 
 
 ### 最小多项式 零化多项式
 
@@ -988,7 +1071,7 @@ $$
 #### 性质
 
 1. 设$m(x)$是$A$的最小多项式, $f(x)$是$A$的任意零化多项式, 则$m(x)|f(x)$. 特别地, $m(x)||xI −A|$. 
-2. 设$A$是任意方阵, $m(x)$是$A$的最小多项式. 设$λ_0 ∈C$. 则$λ_0$是$A$的特征值 $⇐⇒$ $m(λ_0) = 0.$
+2. 设$A$是任意方阵, $m(x)$是$A$的最小多项式. 设$λ_0 ∈C$. 则$λ_0$是$A$的特征值 $⇐⇒$ $m(λ_0) = 0.$ <font color=red>**即 m(x)一定包含A 的全部特征值**</font>
 3. 矩阵A是幂零矩阵 $⇐⇒ A$的特征值均为$0$.
 4. <font color=orange>**分块对角矩阵的最小多项式等于各个子块的最小多项式的最小公倍式(对照: 分块对角矩阵的特征多项式等于各个子块的特征多项式的乘积)**.</font>
 5. 相似矩阵具有相同的最小多项式.
@@ -1002,6 +1085,11 @@ $$
 ![1559453037571](.\img\1559453037571.png)
 
 因此, 可以将矩阵的特征值, 特征向量求解问题转化为空间线性变换
+
+**例:** 当矩阵A只是平面上的**旋转**, 不改变任何向量长度时:
+
+1.  **其特征值模只能为1, 其实特征值只能是 +-1**. 
+2. 由于任何一个非零向量的方向都被改变了, 因此**不存在实特征值**
 
 ## Jordan 标准形
 
@@ -1021,7 +1109,7 @@ $$
 
 ### 幂零矩阵的Jordan标准形定理
 
- 设A是n阶严格上三角复矩阵. 则存在可逆矩阵P和正整数$n_1 ≥ n_2 ≥···≥ n_m, n_1 + n_2 + ···+ n_m = n$, 使得
+ 设A是n阶**严格上三角**复矩阵. 则存在可逆矩阵P和正整数$n_1 ≥ n_2 ≥···≥ n_m, n_1 + n_2 + ···+ n_m = n$, 使得
 $$
 P^{-1} A P=J_{n_{1}} \oplus J_{n_{2}} \oplus \cdots \oplus J_{n_{m}}
 $$
@@ -1037,7 +1125,7 @@ $$
 
 ### Jordan标准形定理
 
-设A是n阶严格上三角复矩阵. 则存在可逆矩阵P和正整数$n_1 ≥ n_2 ≥···≥ n_m, n_1 + n_2 + ···+ n_m = n$, 使得
+设A是n阶复矩阵. 则存在可逆矩阵P和正整数$n_1 ≥ n_2 ≥···≥ n_m, n_1 + n_2 + ···+ n_m = n$, 使得
 $$
 P^{-1} A P=J_{n_{1}}\left(\lambda_{1}\right) \oplus J_{n_{2}}\left(\lambda_{2}\right) \oplus \cdots \oplus J_{n_{m}}\left(\lambda_{m}\right)
 $$
@@ -1052,15 +1140,23 @@ $$
 1. 对阶数较小的幂零矩阵可以通过其幂零指数和秩来确定其Jordan标准形: **最大Jordan块**
 2. 对高阶矩阵, 需要更加精细的方法: 
 
-#### 最大Jordan块
+#### 严格上三角的最大Jordan块
 
-设A是严格上三角矩阵, 则其Jordan标准形的<font color=whiblue>**Jordan块的阶数的最大值等于其幂零指数**.</font>
+设A是严格上三角矩阵, 则其Jordan标准形的
 
-#### 高阶矩阵方法
+<font color=red>**Jordan块的阶数的最大值等于其幂零指数**.</font>
+
+<font color=red>**$A-\mu I $ 的零度 $n-r(A-\mu I)$ 等于对角线为 $\mu$ 的约旦块的个数**.</font>
+
+#### 严格上三角的高阶矩阵方法
 
 ![1559456620761](.\img\1559456620761.png)
 
 ![1559456639299](.\img\1559456639299.png)
+
+#### 普通矩阵的Jordan
+
+![1560752472775](.\img\1560752472775.png)
 
 
 
@@ -1070,9 +1166,17 @@ $$
 
 ![1559456898406](.\img\1559456898406.png)
 
+$\sum_{j \neq i}^{n}\left|a_{i j}\right|$ **为去心绝对行和**
+
 #### 精细圆盘定理
 
 设$C$是盖尔区域的一个由$k$个圆盘组成的连通分支, 则$C$恰好含有k个特征值.
+
+![1560258335979](D:\Github\Mathematics-for-engineering\Matrix_theory\img\1560258335979.png)
+
+<strong style="background:#FF7F50">由于 $A^T$ 和 $A$的特征值一样, 因此行圆盘不足以判断的时候, 还可以再画列圆盘</strong>
+
+
 
 
 
@@ -1120,11 +1224,11 @@ $$
 >    \end{align*}
 >    $$
 
-![1557192167182](D:\Github\Mathematics-for-engineering\Matrix_theory\assets\1557192167182.png)
+![1557192167182](.\assets\1557192167182.png)
 
  ## 矩阵分解
 
-- 正交三角分解
+- 正交三角分解 (列满秩)
 
 - 三角分解（方阵）
 
@@ -1136,7 +1240,7 @@ $$
 
   > 化为Hermite型，P9 定义1.2.4
 
-### 正交三角分解(UR分解)
+## 正交三角分解(UR分解)
 
 > 一种对任何可逆矩阵均存在的理想分解，其原理是Gram-Schmidt的正交化方法
 
@@ -1169,11 +1273,11 @@ $$
 
 非方阵证明
 
-![1557196121409](D:\Github\Mathematics-for-engineering\Matrix_theory\assets\1557196121409.png)
+![1557196121409](.\assets\1557196121409.png)
 
 
 
-### 谱分解或特征值分解
+## 谱分解或特征值分解 
 
 #### 要求与性质
 
@@ -1182,16 +1286,24 @@ $$
 
 ![1557197095962](D:\Github\Mathematics-for-engineering\Matrix_theory\assets\1557197095962.png)
 
-#### 计算方法
+#### 正规矩阵的谱分解计算方法
 
 1. 计算特征值
 2. 计算**单位正交特征向量** (因为是正规矩阵, 因此必存在n个正交特征向量)
 3. 求正交投影矩阵 $P_i =\alpha_i \alpha^*_i$
 4. $A=\sum_{i=1}^s \lambda_i P_i$
 
+#### 一般矩阵的谱分解计算方法
+
+1. 计算特征值
+2. 计算**线性无关**的特征向量, $P=(\alpha_1, \alpha_2, \dots, \alpha_n)$
+3. 计算 $P^{-1}=(\beta_1^T, \beta_2^T, \dots, \beta_n^T)^T$
+4. $P_i=\alpha_i\beta_i$
+5. $A=\sum_{i=1}^s \lambda_i P_i$
 
 
-### 三角分解或LU分解
+
+## 三角分解或LU分解
 
 $$
 A_{n\times n}=LU​
@@ -1208,7 +1320,7 @@ $$
 
 简化线性方程组的求解。设线性方程组 $Ax=b$ ，$A=LU$，则令 $y=Ux$即可将原方程化简为 $Ly=b$和 $Ux=y$ 两个简单的线性方程组
 
-#### 唯一性
+#### 唯一性 
 
 #### Cholesky分解
 
@@ -1229,13 +1341,16 @@ A=LU
 $$
 
 
-### 奇异值分解SVD
+
+## 奇异值分解SVD
 
 $$
 A_{m\times n}=U_{m\times m}D_{m\times n}V_{n\times n}^*
 $$
 
 其中 $D=diag(\sigma_1,\sigma_2,\dots,\sigma_r,0,\dots,0)_{m\times n}$, $\sigma_i$为矩阵 $A$ 的奇异值(共n个)
+
+<font color=red>**注意: V矩阵要共轭转置**</font>
 
 #### 要求
 
@@ -1257,7 +1372,7 @@ $\sigma_1, \dots, \sigma_r,0,\dots,0$称为 $A$的 **奇异值**
 
 2. 求其一组**标准正交特征向量**, $A^*A$为 $v_i$, $AA^*$为 $u_i$
 
-3. 可依据上述条件求得另一个矩阵的特征值、特征向量（$AA^*$ 、$A^*A$的特征值、特征向量有关系）
+3. 可依据上述条件求得另一个矩阵的特征值**(Sylvester降幂公式)**、特征向量（$AA^*$ 、$A^*A$的特征值、特征向量有关系）
 
    > 由于 $AV=UD$ , 因此
    > $$
@@ -1267,15 +1382,29 @@ $\sigma_1, \dots, \sigma_r,0,\dots,0$称为 $A$的 **奇异值**
    > $$
    > u_{i}^{*} A=\left\{\begin{array}{ll}{\sigma_{i} v_{i}^{*},} & {1 \leq i \leq r} \\ {0,} & {r+1 \leq i \leq m}\end{array}\right.
    > $$
-   > 可得 $u_i=\dfrac{1}{\lambda_i}A^*v_i$
+   > 可得
+   > $$
+   > u_i=
+   > \left\{\begin{array}{ll}{\dfrac{1}{\sqrt{\lambda_i}}Av_i,} & {1 \leq i \leq r} \\ {u_i^*A=0,} & {r+1 \leq i \leq m}\end{array}\right.
+   > $$
+   > 
+   > $$
+   > v_{i}=\left\{\begin{array}{ll}{\dfrac{1}{\sqrt{\lambda_i}}A^*u_i,} & {1 \leq i \leq r} \\ {Av_i=0,} & {r+1 \leq i \leq n}\end{array}\right.
+   > $$
 
-4. 奇异值是上述特征值的平方根
+4. 奇异值是上述 $AA^* , A^*A$ 特征值的平方根
 
-5. $U, V$分别是上述特征向量的组合
+5. $U, V$分别是$AA^*, A^*A$的特征向量的组合
+
+   > $AA^*=UDV^*VD^*U^*=UDD^*U^*$, 故U为 $AA^*$ 的单位特征向量组成的酉矩阵
+   >
+   > $A^*A=VD^*U^*UDV^*=VD^*DV^*$, 故V为 $A^*A$ 的单位特征向量组成的酉矩阵
 
 #### 几何意义
 
 将$A_{m×n} = UDV^∗$看作是从$C^n$到$C^m$的线性变换, 则该线性变换
+
+ <font color=orange>**酉矩阵明显代表旋转, D矩阵代表前 $r(A)$ 个坐标以奇异值为比例缩放**</font>
 
 1. 首先(在$C^n$内)将向量$x$做一**旋转**而得到向量$V^∗x,$
 2. 然后再(将$C^n$中的向量$V^∗x$)沿前$r = r(A)$个坐标做**伸缩**(其余坐标变为$0$)而得到($C^m$的) 向量$DV^∗x,$ 
@@ -1304,6 +1433,14 @@ $\sigma_1, \dots, \sigma_r,0,\dots,0$称为 $A$的 **奇异值**
    > <font color=red>(3)$U$的后$m−r$列是$A^∗$的零空间的一组标准正交基; </font>
    >
    > <font color=red>(4)$V$ 的后$n−r$列是$A$的零空间的一组标准正交基.</font>
+   >
+   > 此处很好理解, A相当于一个从 $F^{n}$ 到 $F^{m}$ 的映射 $\sigma $在标准基下的矩阵, 
+   >
+   > 即 $\sigma: V\rightarrow U$ , 而由第二章四个子空间知, 
+   >
+   > $R(A), N(A^*)$是U的子空间,$dimR(A)=r, dimN(A^*)=m-dimR(A)$
+   >
+   > $R(A^*), N(A)$是V的子空间,$dimR(A^*)=r, dimN(A)=n-dimR(A)$
 
 7. **奇异值与特征值**
 
@@ -1321,9 +1458,9 @@ $\sigma_1, \dots, \sigma_r,0,\dots,0$称为 $A$的 **奇异值**
 
 ## 极分解
 
-**定理 4.5.2** 设$A ∈C^{n×n}$, 则存在酉矩阵U和唯一的半正定矩阵P使得
+**定理 4.5.2** 设$A ∈C^{n×n}$, 则存在**酉矩阵U和唯一的半正定矩阵P**使得
 $$
-A=PU上式称为矩阵A的 **极分解**. 矩阵P与U分别称为A的**Hermite因子与酉因子**.
+A=PU
 $$
 
 上式称为矩阵A的 **极分解**. 矩阵P与U分别称为A的**Hermite因子与酉因子**. 
@@ -1361,7 +1498,7 @@ $$
 \left(\sum_{j=1}^{n}\left|x_{j}+y_{j}\right|^{p}\right)^{1 / p} \leq\left(\sum_{j=1}^{n}\left|x_{j}\right|^{p}\right)^{1 / p}+\left(\sum_{j=1}^{n}\left|y_{j}\right|^{p}\right)^{1 / p}, \quad p \geq 1
 $$
 
-#### 矩阵的向量范数
+#### 矩阵范数
 
 $$
 \begin{array}{l}{\|A\|_{F}=\left(\sum_{i, j=1}^{n}\left|a_{i j}\right|^{2}\right)^{1 / 2}=\sqrt{\operatorname{tr}\left(A^{*} A\right)}} \qquad &(Frobenius范数或F-范数) \\ {\|A\|_{1}=\max _{1 \leq j \leq n} \sum_{i=1}^{n}\left|a_{i j}\right|}& 极大列和范数 \\ {\|A\|_{\infty}=\max _{1 \leq i \leq n} \sum_{j=1}^{n}\left|a_{i j}\right|} &极大行和范数\end{array}
@@ -1371,7 +1508,7 @@ $$
 
 ![1559798723000](.\img\1559798723000.png)
 
-列满秩是为了防止 $Ax=0$ 有非零解, 导致 $||x||=0$ 不只在 $x=0$ 处有解, 违反赋范线性空间第一条
+**列满秩**是为了防止 $Ax=0$ 有非零解, 导致 $||x||=0$ 不只在 $x=0$ 处有解, 违反赋范线性空间第一条
 
 #### 向量范数之间的关系
 
@@ -1383,7 +1520,7 @@ $$
 
 在有限维赋范线性空间中的微积分学本质上只有一种, 而在无限维赋范线性空间中则可以有不同的微积分学. 
 
-#### 矩阵范数
+#### 矩阵范数需要满足次乘性
 
 ![1559800796906](.\img\1559800796906.png)
 
@@ -1393,7 +1530,7 @@ $$
 
 ![1559801275334](.\img\1559801275334.png)
 
-<font color=whiblue>**矩阵的1-范数恰好是向量的1-范数的诱导范 数, 而矩阵的$\infty$-范数恰好是向量的 $\infty$-范数的诱导范数**</font> <font color=orange>**矩阵2-范数是向量谱范数($\rho (A^*A)$)的诱导范数**</font>
+<font color=whiblue>**矩阵的1-范数恰好是向量的1-范数的算子范数, 而矩阵的$\infty$-范数恰好是向量的 $\infty$-范数的算子范数**</font> <font color=orange>**矩阵谱范数($\rho (A^*A)$)是向量2-范数的算子范数**</font>
 
 ![1559802450712](.\img\1559802450712.png)
 
@@ -1419,6 +1556,3 @@ $$
 
 # 问题
 
-1. 单位特征向量的求法
-2. 四个子空间的求法
-3. 无限维和有限维
